@@ -33,5 +33,38 @@ while (userNumber != randomNumber) {
 }if (randomNumber == userNumber) {
     alert("Advinaste el numero")
 }
+function solicitarNombre () {
+    let ingresarNombre = prompt("Ingresar Nombre") 
+        alert ("El nombre ingresado es" + ingresarNombre)
+    }
+
+/* PRIMER DESAFIO ENTREGABLE */
+
+
+
+
+
+
+let dividir = (a,b)=> a/b
+let userResponse = prompt("Desea calcular las cuotas?")
+function calcularCuotas (producto,precio,cuotas){
+    alert (`El ${producto} se pagara en ${cuotas} cuotas de ${dividir(precio,cuotas)}`)
+}
+while (userResponse =="Si" || userResponse=="si") {
+let producto = prompt("Ingresar un producto")
+let precio = parseInt(prompt("Ingresar precio"))
+let cuotas = parseInt(prompt("Ingresar cuotas"))
+
+ calcularCuotas(producto,precio,cuotas)
+ userResponse = prompt("Desea calcular las cuotas de otro producto?")
+}
+if (userResponse != "Si") {
+    alert("Gracias por su compra")
+} 
+
+
+
+
+
 
 
