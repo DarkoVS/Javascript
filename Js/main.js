@@ -10,10 +10,7 @@ while (userNumber != randomNumber) {
 }if (randomNumber == userNumber) {
     alert("Advinaste el numero")
 }
-function solicitarNombre () {
-    let ingresarNombre = prompt("Ingresar Nombre") 
-        alert ("El nombre ingresado es" + ingresarNombre)
-    }
+
 
 /* PRIMER DESAFIO ENTREGABLE */
 
