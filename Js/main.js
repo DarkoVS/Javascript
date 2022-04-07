@@ -3,19 +3,19 @@
 
 /* DESAFIO COMPLEMENTARIO */
 
-let randomNumber = Math.floor(Math.random()*3)
+/* let randomNumber = Math.floor(Math.random()*3)
 let userNumber = parseInt(prompt("Ingrese un numero del 0 al 3"))
 while (userNumber != randomNumber) {
     userNumber = parseInt(prompt("No adivinaste, ingrese otro numero"))
 }if (randomNumber == userNumber) {
     alert("Advinaste el numero")
 }
-
+ */
 
 /* PRIMER DESAFIO ENTREGABLE */
 
 
-/* let dividir = (a,b)=> a/b
+/*  let dividir = (a,b)=> a/b
 let userResponse = prompt("Desea calcular las cuotas?")
 class producto {
     constructor (nombre,precio) {
@@ -49,7 +49,7 @@ let cuotas = parseInt(prompt("Ingresar cuotas"))
 if (userResponse != "Si") {
     alert("Gracias por su compra")
 } 
- */
+  */
 
 
 /* const producto2 = new producto ("Camara",1200);
@@ -113,3 +113,102 @@ for (let i = 1 ; i<=num; i++){
 return sheep;
 }
 countSheep(1) */
+
+
+/* primer desafio entregable */
+
+
+/* 
+let dividir = (a,b)=> a/b
+let userResponse = prompt("Desea calcular las cuotas?")
+let producto = null
+let precio = null
+let cuotas = null
+
+function calcularCuotas (producto,precio,cuotas){
+    alert (`El ${producto} se pagara en ${cuotas} cuotas de ${dividir(precio,cuotas)}`)
+}
+while (userResponse =="Si" || userResponse=="si") {
+
+ producto = prompt("Ingresar producto")
+ precio = parseInt(prompt("Ingresar precio"))
+ cuotas = parseInt(prompt("Ingresar cuotas"))
+
+ calcularCuotas(producto,precio,cuotas)
+ userResponse = prompt("Desea calcular las cuotas de otro producto?")
+}
+if (userResponse != "Si") {
+    alert("Gracias por su compra")
+}  */
+
+//Funcion que muestra lista de productos
+
+let productArray = [
+    {
+        nombre:"televisor",
+        precio:"12000"
+    },
+    {
+        nombre:"celular",
+        precio:"25000"
+    },
+]
+//PASO 0 : Mostrar productos 
+/* function showProducts() {
+alert(productArray)
+} */
+
+class producto {
+    constructor (nombre,precio) {
+        this.nombre = nombre;
+        this.precio = precio;
+    }
+        showPrice() {
+            alert ("El precio de este producto es de " + this.precio)
+        }
+        showProduct() {
+            alert("El producto seleccionado es " + this.nombre)
+        }
+}
+/* const producto1 = new producto ("Televisor",12000); */
+// PASO 1 : Agregar productos
+let input1= null
+let input2= null
+let response = prompt("Escriba agregar si desea agregar un producto")
+while(response=="agregar"){
+input1= prompt("Producto")
+input2= prompt("Precio")
+productArray.push(new producto (input1,input2))
+response = prompt("Escriba agregar si desea agregar un producto")
+console.log(productArray)
+}
+
+// PASO 2 : Seleccion de productos
+let seleccionProducto = prompt("Seleccionar producto")
+
+let selectedProduct = productArray.find((producto) => producto.nombre === seleccionProducto)
+
+// PASO 3 : Calculo de cuotas
+let dividir = (a,b)=> a/b
+let userResponse = prompt("Desea calcular las cuotas?")
+
+
+
+function calcularCuotas (producto,precio,cuotas){
+    alert (`El ${producto} se pagara en ${cuotas} cuotas de ${dividir(precio,cuotas)}`)
+}
+while (userResponse =="Si" || userResponse=="si") {
+
+let producto = selectedProduct.nombre
+let precio = selectedProduct.precio
+/* producto1.showProduct()
+producto1.showPrice() */
+let cuotas = parseInt(prompt("Ingresar cuotas"))
+
+ calcularCuotas(producto,precio,cuotas)
+ userResponse = prompt("Desea calcular las cuotas de otro producto?")
+}
+if (userResponse != "Si") {
+    alert("Gracias por su compra")
+} 
+
