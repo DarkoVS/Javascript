@@ -1,7 +1,7 @@
-/* Ejercicio complementario implementando arrays */
+/* Primera pre entrega del proyecto final */
 
- let dividir = (a, b) => a / b;
- let newProduct = prompt("Desea agregar un nuevo producto?")
+let dividir = (a, b) => a / b;
+let newProduct = prompt("Desea agregar un nuevo producto?");
 
 let producto = null;
 let precio = null;
@@ -10,58 +10,60 @@ let productArray = [
   {
     nombre: "televisor",
     precio: "12000",
+    origen: "bolivia",
   },
   {
     nombre: "celular",
     precio: "25000",
+    origen: "uganda",
   },
 ];
 
 // Crear producto
-function addProduct(){
-  let otherProduct = ""
-while (otherProduct="si") {
-  let producto = prompt("Ingrese un nuevo producto")
-  let precio = parseInt(prompt("Ingrese un nuevo precio"))
+function addProduct() {
+  let producto = prompt("Ingrese un nuevo producto");
+  let precio = parseInt(prompt("Ingrese un nuevo precio"));
+  let origen = prompt("Ingrese origen");
   class CreateProduct {
-    constructor (nombre,precio) {
-        this.nombre = nombre;
-        this.precio = precio;
+    constructor(nombre, precio, origen) {
+      this.nombre = nombre;
+      this.precio = precio;
+      this.origen = origen;
     }
-        showPrice() {
-            alert ("El precio de este producto es de " + this.precio)
-        }
-        showProduct() {
-            alert("El producto seleccionado es " + this.nombre)
-        }
   }
-  const producto1 = new CreateProduct (producto,precio);
-  
-  productArray.push(producto1)
-  otherProduct = prompt("Desea agregar otro producto?")
-  console.log(otherProduct);
-  
-}
-  
+  const producto1 = new CreateProduct(producto, precio, origen);
+
+  productArray.push(producto1);
 }
 
-if (newProduct="si"){
-addProduct();
+while (newProduct == "si") {
+  addProduct();
+  newProduct = prompt("Desea agregar otro producto?");
 }
+let filterProductOrigin = prompt("Desea filtrar por pais de origen?")
 
-let userResponse = prompt("Desea calcular las cuotas?");
-
+//Filtrar por origen
+function filterByOrigin () {
+  let productOrigin = prompt("Ingrese un pais de origen")
+  productArray= productArray.filter(x=>x.origen==productOrigin)
+}
+if (filterProductOrigin=="si"){
+  filterByOrigin()
+  }
+  let userResponse = prompt("Desea calcular las cuotas?");
 let seleccionProducto = "";
 
 let selectedProduct = "";
-
-
 
 function selectProduct() {
   seleccionProducto = prompt("Seleccionar producto");
   selectedProduct = productArray.find(
     (producto) => producto.nombre === seleccionProducto
-  );
+  )
+  if (!selectedProduct){
+    alert("Ese producto no existe en nuestra base de datos")
+    selectProduct()
+  }
   producto = selectedProduct?.nombre;
   precio = parseInt(selectedProduct?.precio);
 }
@@ -81,4 +83,3 @@ while (userResponse == "Si" || userResponse == "si") {
 if (userResponse != "si") {
   alert("Gracias por su compra");
 }
- 
