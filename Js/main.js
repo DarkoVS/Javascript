@@ -260,7 +260,7 @@ while (userInput!="salir") {
 }
  */
 
-let dividir = (a, b) => a / b;
+/* let dividir = (a, b) => a / b;
 let userResponse = prompt("Desea calcular las cuotas?");
 let producto = null;
 let precio = null;
@@ -305,5 +305,5 @@ while (userResponse == "Si" || userResponse == "si") {
 if (userResponse != "si") {
   alert("Gracias por su compra");
 }
-
+ 
 
