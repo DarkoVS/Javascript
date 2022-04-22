@@ -303,7 +303,6 @@ while (userResponse == "Si" || userResponse == "si") {
   
 }
 if (userResponse != "si") {
-  alert("Gracias por su compra");
+alert("Gracias por su compra");
 }
- 
-
+*/
